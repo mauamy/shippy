@@ -2,8 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
+	"github.com/micro/go-micro/v2"
 	"io/ioutil"
 	"log"
 	"os"
@@ -28,12 +27,9 @@ func parseFile(file string) (*pb.Consignment, error) {
 }
 
 func main() {
-	conn, err := grpc.Dial(address, grpc.WithTransportCredentials(insecure.NewCredentials()))
-	if err != nil {
-		log.Fatalf("Did not connect: %v", err)
-	}
-	defer conn.Close()
-	client := pb.NewShippingServiceClient(conn)
+	service := micro.NewService(micro.Name("shippy.consignment.cli"))
+	service.Init()
+	client := pb.NewShippingService("shippy.service.consignment", service.Client())
 
 	file := defaultFilename
 	if len(os.Args) > 1 {
