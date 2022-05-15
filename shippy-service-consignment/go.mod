@@ -4,8 +4,8 @@ go 1.17
 
 require (
 	github.com/golang/protobuf v1.5.2
+	github.com/mauamy/shippy/shippy-service-vessel v0.0.0
 	github.com/micro/go-micro/v2 v2.9.1
-	github.com/micro/micro/v2 v2.9.3
 )
 
 require (
@@ -65,3 +65,5 @@ require (
 )
 
 replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
+
+replace github.com/mauamy/shippy/shippy-service-vessel => ../shippy-service-vessel

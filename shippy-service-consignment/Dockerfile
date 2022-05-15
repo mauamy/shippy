@@ -8,6 +8,8 @@ WORKDIR /app
 ENV GO111MODULE=on
 
 COPY . .
+
+WORKDIR /app/shippy-service-consignment
 RUN go mod download
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o shippy-service-consignment
 
@@ -15,6 +17,6 @@ FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
 WORKDIR /app
-COPY --from=builder /app/shippy-service-consignment .
+COPY --from=builder /app/shippy-service-consignment/shippy-service-consignment .
 
 CMD ["./shippy-service-consignment"]
