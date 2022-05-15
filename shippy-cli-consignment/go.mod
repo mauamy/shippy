@@ -23,7 +23,7 @@ require (
 	github.com/go-git/go-git/v5 v5.1.0 // indirect
 	github.com/gogo/protobuf v1.2.1 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
-	github.com/google/uuid v1.1.1 // indirect
+	github.com/google/uuid v1.1.2 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/hpcloud/tail v1.0.0 // indirect
 	github.com/imdario/mergo v0.3.9 // indirect
@@ -65,6 +65,6 @@ require (
 )
 
 replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
-replace (
-	github.com/mauamy/shippy/shippy-service-consignment => ../shippy-service-consignment
-)
+
+replace github.com/mauamy/shippy/shippy-service-consignment => ../shippy-service-consignment
+replace github.com/mauamy/shippy/shippy-service-vessel => ../shippy-service-vessel
