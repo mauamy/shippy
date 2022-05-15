@@ -1,5 +1,6 @@
 This Project is based on the golang microservices tutorial:
 - [Part 1](https://ewanvalentine.io/microservices-in-golang-part-1/)
+- [Part 2](https://ewanvalentine.io/microservices-in-golang-part-2/)
 
 Further Readings:
 - https://www.nginx.com/blog/introduction-to-microservices/
